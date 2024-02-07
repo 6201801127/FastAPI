@@ -1,0 +1,291 @@
+{
+	"info": {
+		"_postman_id": "ff5ed04b-cc08-4aba-aa87-69d774effb43",
+		"name": "BSAP Leave API's",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22637117"
+	},
+	"item": [
+		{
+			"name": "getleaveList",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtb2JpbGVObyI6IjkxMjQ3MzczNjQiLCJ1c2VySWQiOjIsImVtcGxveWVlSWQiOjEsIm90cCI6IjAwMTciLCJleHBpcnkiOiIyMDIzLTA5LTA1In0.QFFTIE4f4WaUPT22G_HNecX-FO6Br4aG2pbmNzTFfss",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"pranNo\": \"123654\",\n\t\"date\": \"20-08-2022\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.1.13:8080/getleaveList/",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"13"
+					],
+					"port": "8080",
+					"path": [
+						"getleaveList",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getallleaveList",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtb2JpbGVObyI6IjkxMjQ3MzczNjQiLCJ1c2VySWQiOjIsImVtcGxveWVlSWQiOjEsIm90cCI6IjAwMTciLCJleHBpcnkiOiIyMDIzLTA5LTA1In0.QFFTIE4f4WaUPT22G_HNecX-FO6Br4aG2pbmNzTFfss",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"pranNo\": \"123654\",\n\t\"date\": \"20-08-2022\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.1.13:8080/getallleaveList",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"13"
+					],
+					"port": "8080",
+					"path": [
+						"getallleaveList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "applyLeave",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtb2JpbGVObyI6IjkxMjQ3MzczNjQiLCJ1c2VySWQiOjIsImVtcGxveWVlSWQiOjEsIm90cCI6IjAwMTciLCJleHBpcnkiOiIyMDIzLTA5LTA1In0.QFFTIE4f4WaUPT22G_HNecX-FO6Br4aG2pbmNzTFfss",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n            \"leave_type_id\": \"6\",           \n\t\t\t\"start_date\": \"29-08-2022\",\n            \"end_date\": \"29-08-2022\",\n\t\t\t\"duration\": \"1\",\n            \"fo_applicable\": \"Yes\",\t\t\n            \"commuted_type\": \"No\",           \n            \"purpose\": \"Going Home For Festival\",\n            \"address_during_leave\": \"Acharya vihar, Bhubaneswar\",            \n\t\t\t\"pranNo\": \"123654\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.1.13:8080/applyLeave",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"13"
+					],
+					"port": "8080",
+					"path": [
+						"applyLeave"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "leaveAction",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtb2JpbGVObyI6IjkxMjQ3MzczNjQiLCJ1c2VySWQiOjIsImVtcGxveWVlSWQiOjEsIm90cCI6IjAwMTciLCJleHBpcnkiOiIyMDIzLTA5LTA1In0.QFFTIE4f4WaUPT22G_HNecX-FO6Br4aG2pbmNzTFfss",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"pranNo\": \"123654\",\n\t\"leave_id\": \"35\",\n\t\"remark\": \"Leaves can not approved during festival season\",\n\t\"leave_action\": \"1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.1.13:8080/leaveAction",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"13"
+					],
+					"port": "8080",
+					"path": [
+						"leaveAction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getallleavetype",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.1.13:8080/getallleavetype",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"13"
+					],
+					"port": "8080",
+					"path": [
+						"getallleavetype"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "leaveActioncancel",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtb2JpbGVObyI6IjkxMjQ3MzczNjQiLCJ1c2VySWQiOjIsImVtcGxveWVlSWQiOjEsIm90cCI6IjAwMTciLCJleHBpcnkiOiIyMDIzLTA5LTA1In0.QFFTIE4f4WaUPT22G_HNecX-FO6Br4aG2pbmNzTFfss",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"pranNo\": \"123654\",\n    \"leave_id\": \"49\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.1.14:8080/leaveActioncancel",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"14"
+					],
+					"port": "8080",
+					"path": [
+						"leaveActioncancel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAvailableLeaves",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtb2JpbGVObyI6IjkxMjQ3MzczNjQiLCJ1c2VySWQiOjIsImVtcGxveWVlSWQiOjEsIm90cCI6IjAwMTciLCJleHBpcnkiOiIyMDIzLTA5LTA1In0.QFFTIE4f4WaUPT22G_HNecX-FO6Br4aG2pbmNzTFfss",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"pranNo\": \"123654\",\n    \"leave_status_id\": \"Casual Leave\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.1.14:8080/getAvailableLeaves",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"14"
+					],
+					"port": "8080",
+					"path": [
+						"getAvailableLeaves"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

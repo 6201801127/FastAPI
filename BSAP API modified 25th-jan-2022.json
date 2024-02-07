@@ -1,0 +1,355 @@
+{
+	"info": {
+		"_postman_id": "a0181212-e57a-4b2f-9238-25154e98627b",
+		"name": "BSAP Attendance API's",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"pranNo\": \"121456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base}}/login/",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "verifyUser",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"pranNo\": \"121456\",\n\"deviceId\":\"sfvvgb\",\n\"otp\":\"5199\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base}}/verifyUser/",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"verifyUser",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "verifyAndTagFriend",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtb2JpbGVObyI6IjkxMjQ3MzczNjQiLCJ1c2VySWQiOjIsImVtcGxveWVlSWQiOjEsIm90cCI6IjUxOTkiLCJleHBpcnkiOjE2NDM3MDI0NjcuMDAzMTY5fQ.TZ2yAJn7cCFhhX-RM_5aZ65kzOS_YIySX2-lb0HSDTg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"friendId\": \"7\",\n    \"deviceId\":\"sfvvgb\",\n    \"otp\": \"0512\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base}}/verifyAndTagFriend/",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"verifyAndTagFriend",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "registerFace",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtb2JpbGVObyI6IjkxMjQ3MzczNjQiLCJ1c2VySWQiOjIsImVtcGxveWVlSWQiOjEsIm90cCI6IjUxOTkiLCJleHBpcnkiOjE2NDM3MDI0NjcuMDAzMTY5fQ.TZ2yAJn7cCFhhX-RM_5aZ65kzOS_YIySX2-lb0HSDTg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"friendId\": \"7\",\n\"faceData\":\"[[0.783993,0.8983293287,0.9329237,0.7832823]]\",\n\"action\":\"R\",\n\"deviceId\":\"45hef4vdvd7\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base}}/registerFace/",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"registerFace",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateAttendance",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtb2JpbGVObyI6IjkxMjQ3MzczNjQiLCJ1c2VySWQiOjIsImVtcGxveWVlSWQiOjEsIm90cCI6IjUxOTkiLCJleHBpcnkiOjE2NDM3MDI0NjcuMDAzMTY5fQ.TZ2yAJn7cCFhhX-RM_5aZ65kzOS_YIySX2-lb0HSDTg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"pranNo\":\"121455\",\n         \"attendance\":[\n             {\n                 \"date\":\"01-01-2021\",\n                 \"checkIn\":\"2021-01-01 09:00:00\",\n                 \"checkOut\":\"2021-01-01 18:00:00\",\n                 \"insideGeoFence\":true,\n                 \"remark\":\"\",\n                 \"lat\":\"20.7837373\",\n                 \"lng\":\"85.3738363\",\n                 \"location\":\"Patia, Bhubaneswar\"\n             }\n         ]\n    },\n    {\n        \"pranNo\":\"121456\",\n         \"attendance\":[\n             {\n                 \"date\":\"01-01-2021\",\n                 \"checkIn\":\"2021-01-01 09:00:00\",\n                 \"checkOut\":\"2021-01-01 18:00:00\",\n                 \"insideGeoFence\":true,\n                 \"remark\":\"\",\n                 \"lat\":\"20.7837373\",\n                 \"lng\":\"85.3738363\",\n                 \"location\":\"Patia, Bhubaneswar\"\n             },\n             {\n                \"date\":\"02-01-2021\",\n                \"checkIn\":\"2021-01-01 09:00:00\",\n                \"checkOut\":\"2021-01-01 18:00:00\",\n                \"insideGeoFence\":true,\n                \"remark\":\"\",\n                \"lat\":\"20.7837373\",\n                \"lng\":\"85.3738363\",\n                \"location\":\"Patia, Bhubaneswar\"\n            }\n         ]\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base}}/updateAttendance/",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"updateAttendance",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getEmployeeDirectory",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtb2JpbGVObyI6IjkxMjQ3MzczNjQiLCJ1c2VySWQiOjIsImVtcGxveWVlSWQiOjEsIm90cCI6IjUxOTkiLCJleHBpcnkiOjE2NDM3MDI0NjcuMDAzMTY5fQ.TZ2yAJn7cCFhhX-RM_5aZ65kzOS_YIySX2-lb0HSDTg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\":\"Mitchal\",\n    \"pageNo\":\"1\",\n    \"pageSize\":\"30\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base}}/getEmployeeDirectory/",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"getEmployeeDirectory",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "verifyFriendOtp",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtb2JpbGVObyI6IjkxMjQ3MzczNjQiLCJ1c2VySWQiOjIsImVtcGxveWVlSWQiOjEsIm90cCI6IjUxOTkiLCJleHBpcnkiOjE2NDM3MDI0NjcuMDAzMTY5fQ.TZ2yAJn7cCFhhX-RM_5aZ65kzOS_YIySX2-lb0HSDTg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"pranNo\": \"121455\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base}}/verifyFriendOtp/",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"verifyFriendOtp",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserFriendsInfo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtb2JpbGVObyI6IjkxMjQ3MzczNjQiLCJ1c2VySWQiOjIsImVtcGxveWVlSWQiOjEsIm90cCI6IjUxOTkiLCJleHBpcnkiOjE2NDM3MDI0NjcuMDAzMTY5fQ.TZ2yAJn7cCFhhX-RM_5aZ65kzOS_YIySX2-lb0HSDTg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"month\":\"12\",\n    \"year\":\"2021\",\n    \"pranNo\":\"121456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base}}/getUserFriendsInfo/",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"getUserFriendsInfo",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateLogOutUser",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userType\":\"1\",\n    \"logoutUser\": \"True\",\n    \"pranNo\":\"121456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base}}/updateLogOutUser/",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"updateLogOutUser",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserCampLocation",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtb2JpbGVObyI6IjkxMjQ3MzczNjQiLCJ1c2VySWQiOjIsImVtcGxveWVlSWQiOjEsIm90cCI6IjUxOTkiLCJleHBpcnkiOjE2NDM3MDI0NjcuMDAzMTY5fQ.TZ2yAJn7cCFhhX-RM_5aZ65kzOS_YIySX2-lb0HSDTg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base}}/getUserCampLocation/",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"getUserCampLocation",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,664 @@
+{
+	"info": {
+		"_postman_id": "a0181212-e57a-4b2f-9238-25154e98627b",
+		"name": "BSAP Attendance API's",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"pranNo\": \"121456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.61.158:8080/login/",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"61",
+						"158"
+					],
+					"port": "8080",
+					"path": [
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "verifyUser",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"pranNo\": \"121456\",\n\"deviceId\":\"sfvvgb\",\n\"otp\":\"2597\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.61.232:8080/verifyUser/",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"61",
+						"232"
+					],
+					"port": "8080",
+					"path": [
+						"verifyUser",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "verifyAndTagFriend",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtb2JpbGVObyI6IjkxMjQ3MzczNjQiLCJ1c2VySWQiOjYsImVtcGxveWVlSWQiOjcsIm90cCI6IjI1OTciLCJleHBpcnkiOiIyMDIzLTA0LTA2In0.ouPLGYsh5Lf1HoQ0XPgG_wdh9WsAlmoobXtr4mZXIsI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"friendId\": \"7\",\n    \"deviceId\":\"sfvvgb\",\n    \"otp\": \"2597\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.61.232:8080/verifyAndTagFriend/",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"61",
+						"232"
+					],
+					"port": "8080",
+					"path": [
+						"verifyAndTagFriend",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "registerFace",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtb2JpbGVObyI6IjkxMjQ3MzczNjQiLCJ1c2VySWQiOjYsImVtcGxveWVlSWQiOjcsIm90cCI6IjI1OTciLCJleHBpcnkiOiIyMDIzLTA0LTA2In0.ouPLGYsh5Lf1HoQ0XPgG_wdh9WsAlmoobXtr4mZXIsI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"friendId\": \"7\",\n\"faceData\":\"[[0.783993,0.8983293287,0.9329237,0.7832823]]\",\n\"action\":\"R\",\n\"deviceId\":\"45hef4vdvd7\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.61.232:8080/registerFace/",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"61",
+						"232"
+					],
+					"port": "8080",
+					"path": [
+						"registerFace",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateAttendance",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtb2JpbGVObyI6IjkxMjQ3MzczNjQiLCJ1c2VySWQiOjIsImVtcGxveWVlSWQiOjEsIm90cCI6IjAyMjciLCJleHBpcnkiOiIyMDIzLTAyLTI1In0.jBN3dORihnV11MkGFA9caE-6K3D3g08mOLcUaw7DhP4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"attendance\": [\n            {\n                \"checkIn\": \"07-04-2022 10:13:34:000001\",\n                \"checkOut\": \"07-04-2022 18:46:22:000001\",\n                \"checkin_lat\": \"20.2988008\",\n                \"checkin_lng\": \"85.8310438\",\n                \"checkin_remark\": \"outside the check-in area\",\n                \"checkout_lat\": \"20.298806\",\n                \"checkout_lng\": \"85.8310384\",\n                \"checkout_remark\": \"jdjdjdhdhdj\",\n                \"date\": \"07-04-2022\",\n                \"insideGeoFence\": true,\n                \"location\": \"207, Bhubaneswar\"\n            }\n        ],\n        \"pranNo\": \"121456\"\n    },\n    {\n        \"attendance\": [\n            {\n                \"checkIn\": \"07-04-2022 10:13:34:000001\",\n                \"checkOut\": \"07-04-2022 18:46:22:000001\",\n                \"checkin_lat\": \"20.2988322\",\n                \"checkin_lng\": \"85.8310376\",\n                \"checkin_remark\": \"yehsjdkdjdj djdkjdi didjdj\",\n                \"checkout_lat\": \"20.298803\",\n                \"checkout_lng\": \"85.8310412\",\n                \"checkout_remark\": \"okjnjjjjjdjsjssjss\",\n                \"date\": \"07-04-2022\",\n                \"insideGeoFence\": true,\n                \"location\": \"207, Bhubaneswar\"\n            }\n        ],\n        \"pranNo\": \"121455\"\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.61.232:8080/updateAttendance/",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"61",
+						"232"
+					],
+					"port": "8080",
+					"path": [
+						"updateAttendance",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getEmployeeDirectory",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtb2JpbGVObyI6IjkxMjQ3MzczNjQiLCJ1c2VySWQiOjIsImVtcGxveWVlSWQiOjEsIm90cCI6IjAyMjciLCJleHBpcnkiOiIyMDIzLTAyLTI1In0.jBN3dORihnV11MkGFA9caE-6K3D3g08mOLcUaw7DhP4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\":\"\",\n    \"pageNo\":\"1\",\n    \"pageSize\":\"30\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.61.232:8080/getEmployeeDirectory/",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"61",
+						"232"
+					],
+					"port": "8080",
+					"path": [
+						"getEmployeeDirectory",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "verifyFriendOtp",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtb2JpbGVObyI6IjkxMjQ3MzczNjQiLCJ1c2VySWQiOjIsImVtcGxveWVlSWQiOjEsIm90cCI6IjAyMjciLCJleHBpcnkiOiIyMDIzLTAyLTI1In0.jBN3dORihnV11MkGFA9caE-6K3D3g08mOLcUaw7DhP4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"pranNo\": \"121456\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base}}/verifyFriendOtp/",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"verifyFriendOtp",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserFriendsInfo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtb2JpbGVObyI6IjkxMjQ3MzczNjQiLCJ1c2VySWQiOjIsImVtcGxveWVlSWQiOjEsIm90cCI6IjAyMjciLCJleHBpcnkiOiIyMDIzLTAyLTI1In0.jBN3dORihnV11MkGFA9caE-6K3D3g08mOLcUaw7DhP4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"month\":\"04\",\n    \"year\":\"2022\",\n    \"pranNo\":\"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.61.232:8080/getUserFriendsInfo/",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"61",
+						"232"
+					],
+					"port": "8080",
+					"path": [
+						"getUserFriendsInfo",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateLogOutUser",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userType\":\"1\",\n    \"logoutUser\": \"True\",\n    \"pranNo\":\"121456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.61.232:8080/updateLogOutUser/",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"61",
+						"232"
+					],
+					"port": "8080",
+					"path": [
+						"updateLogOutUser",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserCampLocation",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtb2JpbGVObyI6IjkxMjQ3MzczNjQiLCJ1c2VySWQiOjIsImVtcGxveWVlSWQiOjEsIm90cCI6IjAyMjciLCJleHBpcnkiOiIyMDIzLTAyLTI1In0.jBN3dORihnV11MkGFA9caE-6K3D3g08mOLcUaw7DhP4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.61.232:8080/getUserCampLocation/",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"61",
+						"232"
+					],
+					"port": "8080",
+					"path": [
+						"getUserCampLocation",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getMonthlyAttendanceStats",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtb2JpbGVObyI6IjkxMjQ3MzczNjQiLCJ1c2VySWQiOjIsImVtcGxveWVlSWQiOjEsIm90cCI6IjAyMjciLCJleHBpcnkiOiIyMDIzLTAyLTI1In0.jBN3dORihnV11MkGFA9caE-6K3D3g08mOLcUaw7DhP4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"month\":\"04\",\n    \"year\":\"2022\",\n    \"pranNo\":\"121456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.61.232:8080/getMonthlyAttendanceStats/",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"61",
+						"232"
+					],
+					"port": "8080",
+					"path": [
+						"getMonthlyAttendanceStats",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "applyAttendance",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n    \"pranNo\": \"121455\",\n    \"checkIn\": \"12-04-2022 09:30:47:000001\",\n    \"checkOut\": \"12-04-2022 18:00:51:000001\",\n    \"applyDate\": \"12-04-2022 18:16:44:000001\",\n    \"attendanceDate\": \"12-04-2022\",\n    \"reason\": \"My phone battery was died\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.61.232:8080/applyAttendance/",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"61",
+						"232"
+					],
+					"port": "8080",
+					"path": [
+						"applyAttendance",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pendingAttendanceRequests",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtb2JpbGVObyI6IjkxMjQ3MzczNjQiLCJ1c2VySWQiOjIsImVtcGxveWVlSWQiOjEsIm90cCI6IjAyMjciLCJleHBpcnkiOiIyMDIzLTAyLTI1In0.jBN3dORihnV11MkGFA9caE-6K3D3g08mOLcUaw7DhP4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.61.232:8080/pendingAttendanceRequests/",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"61",
+						"232"
+					],
+					"port": "8080",
+					"path": [
+						"pendingAttendanceRequests",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "approveAttendanceRequest",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"status\":1,\n    \"requestId\":\"92\",\n    \"remark\": \"request approved\",\n    \"raId\" : 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.61.232:8080/approveAttendanceRequest/",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"61",
+						"232"
+					],
+					"port": "8080",
+					"path": [
+						"approveAttendanceRequest",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pendingOffSiteRequests",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtb2JpbGVObyI6IjkxMjQ3MzczNjQiLCJ1c2VySWQiOjIsImVtcGxveWVlSWQiOjEsIm90cCI6IjAyMjciLCJleHBpcnkiOiIyMDIzLTAyLTI1In0.jBN3dORihnV11MkGFA9caE-6K3D3g08mOLcUaw7DhP4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.61.232:8080/pendingOffSiteRequests/",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"61",
+						"232"
+					],
+					"port": "8080",
+					"path": [
+						"pendingOffSiteRequests",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "approveOffSiteAttedance",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtb2JpbGVObyI6IjkxMjQ3MzczNjQiLCJ1c2VySWQiOjIsImVtcGxveWVlSWQiOjEsIm90cCI6IjAyMjciLCJleHBpcnkiOiIyMDIzLTAyLTI1In0.jBN3dORihnV11MkGFA9caE-6K3D3g08mOLcUaw7DhP4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"status\":1,\n    \"requestId\":\"50\",\n    \"remark\": \"offsite attendnace request approved\",\n    \"raId\" : 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.61.232:8080/approveOffSiteAttedance/",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"61",
+						"232"
+					],
+					"port": "8080",
+					"path": [
+						"approveOffSiteAttedance",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserAppliedAttendance",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"pranNo\": \"121455\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.61.232:8080/getUserAppliedAttendance/",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"61",
+						"232"
+					],
+					"port": "8080",
+					"path": [
+						"getUserAppliedAttendance",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
